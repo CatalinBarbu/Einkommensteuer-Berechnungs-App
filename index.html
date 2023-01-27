@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einkommensteuer-Berechnungs-App.</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section>
+        <article>
+          <h1>Einkommensteuer-Berechnungs-App.</h1>
+        </article>
+        <article>
+          <p>
+            Mit einer Steuererklärung zeigst du dem Finanzamt deine
+            Einkommensverhältnisse auf. Anhand dieser Informationen kann das
+            Finanzamt sehen, ob du für das entsprechende Jahr bereits die
+            nötigen oder sogar zu viele Steuern gezahlt hast.
+          </p>
+        </article>
+        <article>
+          <button id="submiteHeader">Zu Berechnung</button>
+        </article>
+      </section>
+    </header>
+    <main id="main" class="displayNone">
+      <section class="title">
+        <h1>
+          Einkommensteuer Berechnung
+          <hr />
+        </h1>
+      </section>
+      <section>
+        <article class="color">
+          <p>Für welches Jahr soll berechnet werden?</p>
+        </article>
+        <article>
+          <form onsubmit="return false" id="jahrInput">
+            <section>
+              <input type="radio" name="Jahr" id="jahr20" />
+              <label for="jahr20">2020</label>
+            </section>
+            <section>
+              <input type="radio" name="Jahr" id="jahr21" />
+              <label for="jahr21">2021</label>
+            </section>
+            <section>
+              <input type="radio" name="Jahr" id="jahr22" />
+              <label for="jahr22">2022</label>
+            </section>
+          </form>
+        </article>
+      </section>
+      <section class="color">
+        <p>
+          Soll die Berechnung für Sie als Einzelperson, oder im
+          Splittingverfahren erfolgen?
+        </p>
+      </section>
+      <section>
+        <form onsubmit="return false" id="jahrInput">
+          <div>
+            <input type="radio" name="singleOr" id="singleInput" />
+            <label for="singleInput">Single</label>
+          </div>
+          <div>
+            <input type="radio" name="singleOr" id="notSingle" />
+            <label for="notSingle">Splittingverfahren</label>
+          </div>
+        </form>
+      </section>
+      <section class="textInfo">
+        <p>Ihr Gesamteeinkommen (p.a.)</p>
+        <input type="number" name="inPutKunde" id="inPutKunde" />
+      </section>
+      <section>
+        <input type="button" value="Steuer berechnen" id="submite" />
+      </section>
+      <section class="footer">
+        <article>
+          <p>Herangezogenes Gesamteinkommen:</p>
+          <p id="outPutGesamt"></p>
+        </article>
+        <article>
+          <p>Einkommensteuer für das Jahr</p>
+          <p id="outPutSteuer"></p>
+        </article>
+      </section>
+    </main>
+
+    <script src="./assets/Js/main.js"></script>
+  </body>
+</html>
