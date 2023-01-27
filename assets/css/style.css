@@ -100,9 +100,13 @@ input[type="number"] {
 .displayNone {
   display: none;
 }
-
+/* ===== Media Query ====== */
 @media only screen and (max-width: 600px) {
   body {
     margin: 5vh 7vw;
+  }
+  #main,
+  #header {
+    margin-top: 0;
   }
 }
