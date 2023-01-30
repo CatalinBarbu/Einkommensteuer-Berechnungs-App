@@ -16,6 +16,8 @@ submiteHeader.addEventListener("click", () => {
   main.classList.remove("displayNone");
 });
 submite.addEventListener("click", () => {
+  let inPutValueAll = notSingle.checked ? inPut.value / 2 : inPut.value;
+  console.log(inPutValueAll);
   let outPut = "";
   let outPut2 = "";
   let jahr22Abk = jahr22.checked & singleInput.checked;
@@ -33,7 +35,7 @@ submite.addEventListener("click", () => {
     outPut2 = outPut;
   } else if (jahr22Abk && inPut.value <= 277826) {
     outPut = 0.45 * inPut.value - 17671.2;
-    outPut2 = outPut;
+    outPut2 = Number(outPut);
   }
   outPutGesamt.innerHTML += inPut.value;
   outPutSteuer.innerHTML += outPut2.toFixed(2);
@@ -45,7 +47,10 @@ submite.addEventListener("click", () => {
   if (jahr21Abk && inPut.value <= 9744) {
     outPut = inPut.value;
     outPut2 = 0;
-  } else if (jahr21Abk && inPut.value >= 9745 && inPut.value <= 14753) {
+  } else if (
+    (jahr21Abk && inPut.value >= 9745 && inPut.value <= 14753) ||
+    (jahr21Abk && inPut.value >= 14754 && inPut.value <= 57918)
+  ) {
     outPut = (inPut.value - 9744) / 10000;
     outPut2 = (995.21 * outPut + 1400) * outPut;
   } else if (jahr21Abk && inPut.value >= 14754 && inPut.value <= 57918) {
@@ -56,15 +61,15 @@ submite.addEventListener("click", () => {
     outPut2 = outPut;
   } else if (jahr21Abk && inPut.value >= 274613) {
     outPut = 0.45 * inPut.value - 17374.99;
-    outPut2 = outPut;
+    outPut2 = Number(outPut);
   }
   outPutGesamt.innerHTML = inPut.value;
   outPutSteuer.innerHTML = outPut2.toFixed(2);
 });
 submite.addEventListener("click", () => {
   let outPut = "";
-  let outPut2 = "";
-  let jahr20Abk = jahr21.checked & singleInput.checked;
+  let parseIntoutPut2 = "";
+  let jahr20Abk = jahr20.checked & singleInput.checked;
   if (jahr20Abk && inPut.value <= 9408) {
     outPut = inPut.value;
     outPut2 = 0;
@@ -77,10 +82,10 @@ submite.addEventListener("click", () => {
   } else if (jahr20Abk && inPut.value >= 57052 && inPut.value <= 270500) {
     outPut = 0.42 * inPut.value - 8963.74;
     outPut2 = outPut;
-  } else if (jahr20Abk && inPut.value <= 270501) {
+  } else if (jahr20Abk && inPut.value >= 270501) {
     outPut = 0.45 * inPut.value - 17078.74;
-    outPut2 = outPut;
+    outPut2 = Number(outPut);
   }
   outPutGesamt.innerHTML = inPut.value;
-  outPutSteuer.innerHTML = outPut2.toFixed(2);
+  outPutSteuer.innerHTML = Number(outPut2.toFixed(2));
 });
